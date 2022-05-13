@@ -15,7 +15,7 @@
                             <th class="px-4 py-2">ID</th>
                             <th class="px-4 py-2">スキル名</th>
                             <th class="px-4 py-2">ステータス</th>
-                            </tr>
+                        </tr>
                         </thead>
                         <tbody>
                             @foreach($skills as $skill)
@@ -27,6 +27,9 @@
                             @endforeach
                         </tbody>
                         </table>
+                        <div class="flex justify-center mt-3">
+                            {{$skills->links()}}
+                        </div>
                 </div>
             </div>
         </div>
