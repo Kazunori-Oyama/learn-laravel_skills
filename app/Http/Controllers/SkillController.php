@@ -15,4 +15,12 @@ class SkillController extends Controller
             'skills' => $skills
         ]);
     }
+    
+    public function detail($id)
+    {
+        $skill = Skill::find($id);
+        return view('skill.detail',[
+            'skill' => $skill
+        ]);
+    }
 }
