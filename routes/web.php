@@ -25,6 +25,8 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->prefix('skill')->group(function(){
     Route::get('/',[SkillController::class,'index'])->name('skill');
     Route::get('/detail/{id}',[SkillController::class,'detail'])->name('skill.detail');
+    Route::get('/new',[SkillController::class,'new'])->name('skill.new');
+    Route::post('/create',[SkillController::class,'create'])->name('skill.create');
 });
 
 

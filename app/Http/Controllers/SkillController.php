@@ -23,4 +23,20 @@ class SkillController extends Controller
             'skill' => $skill
         ]);
     }
+    
+    public function new( )
+    {
+        return view('skill.new');
+    }
+    
+    public function create(Request $request )
+    {
+        $skill = new Skill();
+        $skill->skill_name = $request -> input('skill_name');
+        $skill->skill_status = $request->input('skill_status');
+        $skill->save();
+        
+        
+        return redirect('skill');
+    }
 }
