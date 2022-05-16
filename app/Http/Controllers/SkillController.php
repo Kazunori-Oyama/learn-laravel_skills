@@ -37,6 +37,6 @@ class SkillController extends Controller
         $skill->save();
         
         
-        return redirect('skill');
+        return redirect('skill')->with('status','スキルを登録しました。');
     }
 }

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            スキル
+            スキル新規登録
         </h2>
     </x-slot>
 
@@ -18,7 +18,7 @@
                             </label>
                             </div>
                             <div class="md:w-2/3">
-                                <input name="skill_name" placeholder="スキル名" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="">
+                                <input required name="skill_name" placeholder="スキル名" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="">
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
