@@ -22,18 +22,25 @@
                                 <th class="px-4 py-2">スキル名</th>
                                 <th class="px-4 py-2">ステータス</th>
                                 <th class="px-4 py-2"></th>
+                                <th class="px-4 py-2"></th>
                             </tr>
                             </thead>
                             <tbody>
                                 @foreach($skills as $skill)
                                 <tr>
-                                <td class="border px-4 py-2">{{$skill->id}}</td>
-                                <td class="border px-4 py-2">{{$skill->skill_name}}</td>
-                                <td class="border px-4 py-2">{{App\Models\Skill::SKILL_STATUS_OBJECT[$skill->skill_status]}}</td>
-                                <td class="border px-4 py-2">
-                                    <button onclick="location.href='/skill/detail/{{$skill->id}}'" class="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                                        詳細ページへ
-                                    </button>
+                                    <td class="border px-4 py-2">{{$skill->id}}</td>
+                                    <td class="border px-4 py-2">{{$skill->skill_name}}</td>
+                                    <td class="border px-4 py-2">{{App\Models\Skill::SKILL_STATUS_OBJECT[$skill->skill_status]}}</td>
+                                    <td class="border px-4 py-2">
+                                        <button onclick="location.href='/skill/detail/{{$skill->id}}'" class="shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                                            詳細ページへ
+                                        </button>
+                                    </td>
+                                    <td class="border px-4 py-2">
+                                        <button onclick="location.href='/skill/edit/{{$skill->id}}'" class="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                                            編集ページへ
+                                        </button>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

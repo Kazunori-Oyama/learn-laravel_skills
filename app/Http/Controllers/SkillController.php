@@ -39,4 +39,24 @@ class SkillController extends Controller
         
         return redirect('skill')->with('status','スキルを登録しました。');
     }
+    
+    public function edit($id)
+    {
+        $skill = Skill::find($id);
+        return view('skill.edit',[
+            'skill' => $skill
+        ]);
+    }
+    
+    public function update(Request $request )
+    {
+        $skill = Skill::find($request->input('id'));
+        $skill->skill_name = $request -> input('skill_name');
+        $skill->skill_status = $request->input('skill_status');
+        $skill->save();
+        
+        
+        return redirect('skill')->with('status','スキルを更新しました。');
+    }
+    
 }
