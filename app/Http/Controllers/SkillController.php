@@ -59,4 +59,10 @@ class SkillController extends Controller
         return redirect('skill')->with('status','スキルを更新しました。');
     }
     
+    public function remove($id)
+    {
+        $skill = Skill::find($id)->delete();
+        return redirect('skill')->with('status','スキルを削除しました。');
+    }
+    
 }

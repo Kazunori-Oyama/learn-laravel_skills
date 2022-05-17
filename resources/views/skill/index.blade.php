@@ -23,6 +23,7 @@
                                 <th class="px-4 py-2">ステータス</th>
                                 <th class="px-4 py-2"></th>
                                 <th class="px-4 py-2"></th>
+                                <th class="px-4 py-2"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,6 +41,15 @@
                                         <button onclick="location.href='/skill/edit/{{$skill->id}}'" class="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                                             編集ページへ
                                         </button>
+                                    </td>
+                                    <td class="border px-4 py-2">
+                                        <form action="/skill/remove/{{$skill->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+                                                削除
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
