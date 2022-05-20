@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex justify-center">
-                    <form class="w-full max-w-sm">
+                    <form class="w-full max-w-screen-lg">
                         <div class="md:flex md:items-center mb-6">
                             <div class="md:w-1/3">
                             <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="inline-full-name">
@@ -38,6 +38,26 @@
                             </div>
                             <div class="md:w-2/3">
                                 {{App\Models\Skill::SKILL_STATUS_OBJECT[$skill->skill_status]}}
+                            </div>
+                        </div>
+                        <div class="md:flex md:items-center mb-6">
+                            <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                経験年数
+                            </label>
+                            </div>
+                            <div class="md:w-2/3">
+                                {{$skill->experience_years}}
+                            </div>
+                        </div>
+                        <div class="md:flex md:items-center mb-6">
+                            <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="inline-password">
+                                特記事項
+                            </label>
+                            </div>
+                            <div class="md:w-2/3">
+                                {{$skill->remarks}}
                             </div>
                         </div>
                         

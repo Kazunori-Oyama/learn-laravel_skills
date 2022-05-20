@@ -36,6 +36,8 @@ class SkillController extends Controller
         $skill = new Skill();
         $skill->skill_name = $request -> input('skill_name');
         $skill->skill_status = $request->input('skill_status');
+        $skill->experience_years = $request->input('experience_years');
+        $skill->remarks = $request->input('remarks');
         $skill->save();
         
         
@@ -55,6 +57,8 @@ class SkillController extends Controller
         $skill = Skill::find($request->input('id'));
         $skill->skill_name = $request -> input('skill_name');
         $skill->skill_status = $request->input('skill_status');
+        $skill->experience_years = $request->input('experience_years');
+        $skill->remarks = $request->input('remarks');
         $skill->save();
         
         
