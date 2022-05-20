@@ -21,8 +21,8 @@
                                 <th class="px-4 py-2">ID</th>
                                 <th class="px-4 py-2">スキル名</th>
                                 <th class="px-4 py-2">ステータス</th>
-                                <th class="px-4 py-2"></th>
-                                <th class="px-4 py-2"></th>
+                                <th class="px-4 py-2">経験年数</th>
+                                <th class="px-4 py-2">特記事項</th>
                                 <th class="px-4 py-2"></th>
                             </tr>
                             </thead>
@@ -32,6 +32,9 @@
                                     <td class="border px-4 py-2">{{$skill->id}}</td>
                                     <td class="border px-4 py-2">{{$skill->skill_name}}</td>
                                     <td class="border px-4 py-2">{{App\Models\Skill::SKILL_STATUS_OBJECT[$skill->skill_status]}}</td>
+                                    <td class="border px-4 py-2">{{$skill->experience_years}}</td>
+                                    <td class="border px-4 py-2">{{$skill->remarks}}</td>
+                                    
                                     <td class="border px-4 py-2">
                                         <button onclick="location.href='/skill/detail/{{$skill->id}}'" class="shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                                             詳細ページへ
