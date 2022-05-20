@@ -30,27 +30,10 @@
                             </label>
                             </div>
                             <div class="md:w-2/3">
-                                <input required name="skill_name" placeholder="スキル名" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="{{$skill->skill_name}}">
-                            </div>
-                        </div>
-                        <div class="md:flex md:items-center mb-6">
-                            <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="experience_years">
-                                経験年数
-                            </label>
-                            </div>
-                            <div class="md:w-2/3">
-                                <input required name="experience_years" placeholder="経験年数" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="number" value="{{$skill->experience_years}}">
-                            </div>
-                        </div>
-                        <div class="md:flex md:items-center mb-6">
-                            <div class="md:w-1/3">
-                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="remarkd">
-                                特記事項
-                            </label>
-                            </div>
-                            <div class="md:w-2/3">
-                                <textarea name="remarks" id="" cols="30" rows="10" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">{{$skill->remarks}}</textarea>
+                                <input name="skill_name" placeholder="スキル名" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" value="{{$skill->skill_name}}">
+                                @error('skill_name')
+                                <div class="text-red-600">{{$message}}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -65,6 +48,36 @@
                                     <option value="{{$key}}" @if($key === $skill->skill_status) seleted @endif>{{$skillName}}</option>
                                     @endforeach
                                 </select>
+                                @error('skill_status')
+                                <div class="text-red-600">{{$message}}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="md:flex md:items-center mb-6">
+                            <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="experience_years">
+                                経験年数
+                            </label>
+                            </div>
+                            <div class="md:w-2/3">
+                                <input required name="experience_years" placeholder="経験年数" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="number" value="{{$skill->experience_years}}">
+                                @error('experience_years')
+                                <div class="text-red-600">{{$message}}</div>
+                                @enderror
+                            </div>
+                            
+                        </div>
+                        <div class="md:flex md:items-center mb-6">
+                            <div class="md:w-1/3">
+                            <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="remarkd">
+                                特記事項
+                            </label>
+                            </div>
+                            <div class="md:w-2/3">
+                                <textarea name="remarks" id="" cols="30" rows="10" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">{{$skill->remarks}}</textarea>
+                                @error('remarks')
+                                <div class="text-red-600">{{$message}}</div>
+                                @enderror
                             </div>
                         </div>
                         

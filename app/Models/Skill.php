@@ -27,4 +27,12 @@ class Skill extends Model
         self::SKILL_STATUS_RELEARN => self::SKILL_STATUS_NAME_RELEARN,
         self::SKILL_STATUS_MASTER => self::SKILL_STATUS_NAME_MASTER,
     ];
+    
+    const SKILL_STATUS_ARRAY = [
+        self::SKILL_STATUS_NAME_NOT_YET,
+        self::SKILL_STATUS_NAME_LEARNING,
+        self::SKILL_STATUS_NAME_LEARNED,
+        // self::SKILL_STATUS_NAME_RELEARN,
+        // self::SKILL_STATUS_NAME_MASTER
+    ];
 }

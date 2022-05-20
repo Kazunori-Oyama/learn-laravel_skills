@@ -164,6 +164,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'skill_name' => 'ステータス',
+        'skill_status' => 'ステータス',
+        'remarks' => '特記事項',
+        'experience_years' => '経験年数',
+    ],
 
 ];

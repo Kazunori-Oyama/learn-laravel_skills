@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class SkillController extends Controller
 {
@@ -54,6 +55,17 @@ class SkillController extends Controller
     
     public function update(Request $request )
     {
+        $validated = $request->validate([
+        'skill_name' => 'required|max:255',
+        'skill_status' => ['required', Rule::in(SKILL::SKILL_STATUS_ARRAY)],
+        'remarks' => 'max:1000',
+        'experience_years' => 'numeric|max:100',
+        ]);
+        
+        if($validated->false()){
+            return redirect('skill')->withErrors($validated)->withIinput();
+        }
+        
         $skill = Skill::find($request->input('id'));
         $skill->skill_name = $request -> input('skill_name');
         $skill->skill_status = $request->input('skill_status');
