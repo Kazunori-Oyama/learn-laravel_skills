@@ -24,7 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->prefix('usually')->group(function(){
+    Route::get('/template',[UsuallyController::class,'template'])->name('template');
+    
     Route::get('/',[UsuallyController::class,'index'])->name('usually');
+    
     
 });
 
