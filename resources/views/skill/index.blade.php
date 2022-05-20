@@ -33,7 +33,7 @@
                                     <td class="border px-4 py-2">{{$skill->skill_name}}</td>
                                     <td class="border px-4 py-2">{{App\Models\Skill::SKILL_STATUS_OBJECT[$skill->skill_status]}}</td>
                                     <td class="border px-4 py-2">{{$skill->experience_years}}</td>
-                                    <td class="border px-4 py-2">{{$skill->remarks}}</td>
+                                    <td class="border px-4 py-2"><a class="text-blue-600 hover:text-blue-800"  href="/skill/detail/{{$skill->id}}">{{Str::limit($skill->remarks,148,$end='続き…')}}</a></td>
                                     
                                     <td class="border px-4 py-2">
                                         <button onclick="location.href='/skill/detail/{{$skill->id}}'" class="shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">

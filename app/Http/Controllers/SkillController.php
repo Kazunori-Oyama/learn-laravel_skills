@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SkillController extends Controller
 {
     //
     public function index()
     {
+        // $skills = Skill::select('id','skill_status','skill_name','experience_years', DB::raw('LEFT(remarks, 20) as remarks'))->paginate(15);
         $skills = Skill::paginate(15);
         return view('skill.index',[
             'skills' => $skills
