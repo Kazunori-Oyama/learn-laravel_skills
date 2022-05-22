@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Validator;
+use App\Http\Requests\SkillPostRequest;
+
 class SkillController extends Controller
 {
     //
@@ -32,7 +34,7 @@ class SkillController extends Controller
         return view('skill.new');
     }
     
-    public function create(Request $request )
+    public function create(SkillPostRequest $request )
     {
         $skill = new Skill();
         $skill->skill_name = $request -> input('skill_name');
